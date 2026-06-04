@@ -1,4 +1,4 @@
-# 🪟 Modal Popup UI
+#  Modal Popup UI
 
 Uma interface moderna de modal popup desenvolvida com foco em interação do usuário e confirmação de ações importantes, utilizando um design elegante e minimalista para melhorar a experiência visual em aplicações web.
 
