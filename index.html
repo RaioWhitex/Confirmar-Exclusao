@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirm Delete</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- O truque: usamos :target para abrir/fechar o modal só com CSS -->
+  <div class="page">
+    <a href="#modal" class="btn-click">Click Me</a>
+  </div>
+
+  <div class="overlay" id="modal">
+    <div class="modal">
+      <div class="icon-wrapper">
+        <span class="icon">!</span>
+      </div>
+      <h2>Confirm</h2>
+      <p>Are you sure want to permanently<br>delete this Photo?</p>
+      <div class="modal-actions">
+        <a href="#modal" class="btn-confirm">Yes, Delete!</a>
+        <a href="#" class="btn-cancel">Cancel</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue:   #3A7DBF;
+  --blue-h: #2d6aa8;
+  --red:    #E04A3F;
+  --red-h:  #c53b31;
+  --text:   #222;
+  --gray:   #666;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Página principal ── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+/* ── Botão "Click Me" ── */
+.btn-click {
+  background: var(--blue);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-block;
+}
+
+.btn-click:hover  { background: var(--blue-h); }
+.btn-click:active { transform: scale(0.97); }
+
+/* ── Overlay (escondido por padrão) ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(100, 100, 100, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+
+  /* Escondido */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* Aparece quando é o alvo da URL (#modal) */
+.overlay:target {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Modal ── */
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 36px 32px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.overlay:target .modal {
+  transform: scale(1) translateY(0);
+}
+
+/* ── Ícone ── */
+.icon-wrapper {
+  width: 68px;
+  height: 68px;
+  border: 2.5px solid var(--red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--red);
+  line-height: 1;
+}
+
+/* ── Textos ── */
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* ── Botões do modal ── */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-confirm,
+.btn-cancel {
+  flex: 1;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-block;
+}
+
+.btn-confirm {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-confirm:hover  { background: var(--blue-h); }
+.btn-confirm:active { transform: scale(0.97); }
+
+.btn-cancel {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn-cancel:hover  { background: var(--red-h); }
+.btn-cancel:active { transform: scale(0.97); }
